@@ -1,0 +1,26 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+/* Font : arial bold 24px*/
+.back{
+    background-image: url("Resources/stand_status.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.values{
+    position: relative;
+    text-align: right;
+    top:150px;
+    left:100px;
+}
+
+.values p{
+    margin:2px 0px; 
+}
