@@ -10,12 +10,13 @@
 <body>
     <div class="content">
         <div class="values">
-            <p> Power : <input type="range" name="power_slider" id="power" value=3 min=0 max=5 oninput="GetValues()"></p>
-            <p> Speed : <input type="range" name="speed_slider" id="speed" value=3 min=0 max=5 oninput="GetValues()"></p> 
-            <p> Range : <input type="range" name="range_slider" id="range" value=3 min=0 max=5 oninput="GetValues()"></p>
-            <p> Durability : <input type="range" name="durability_slider" id="durability" value=3 min=0 max=5 oninput="GetValues()"></p>
-            <p> Precision : <input type="range" name="precision_slider" id="precision" value=3 min=0 max=5 oninput="GetValues()"></p>
-            <p> Potential : <input type="range" name="potential_slider" id="potential" value=3 min=0 max=5 oninput="GetValues()"></p>
+            <p> Power : <input type="range" name="power_slider" id="power" class="skill" value=3 min=0 max=5 oninput="SetValues()"></p>
+            <p> Speed : <input type="range" name="speed_slider" id="speed" class="skill" value=3 min=0 max=5 oninput="SetValues()"></p> 
+            <p> Range : <input type="range" name="range_slider" id="range" class="skill" value=3 min=0 max=5 oninput="SetValues()"></p>
+            <p> Durability : <input type="range" name="durability_slider" id="durability" class="skill" value=3 min=0 max=5 oninput="SetValues()"></p>
+            <p> Precision : <input type="range" name="precision_slider" id="precision" class="skill" value=3 min=0 max=5 oninput="SetValues()"></p>
+            <p> Potential : <input type="range" name="potential_slider" id="potential" class="skill" value=3 min=0 max=5 oninput="SetValues()"></p>
+            <button onclick="RandomValues()">Random Button</button>
         </div>
         <svg id ="svgStand" height = "480" width="320">
             <image href="Resources/stand_status.png" x="0" y="0"  height = "480" width="320"/>

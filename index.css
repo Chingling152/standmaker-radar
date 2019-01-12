@@ -2,15 +2,9 @@
     padding:0px;
     margin:0px;
 }
-/* Font : arial bold 24px*/
-.back{
-    background-image: url("Resources/stand_status.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
 .content{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
@@ -23,4 +17,33 @@
 
 .values p{
     margin:2px 0px; 
+}
+
+.rank-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+    text-align: center;
+    width: 100px;
+}
+
+@media screen and (max-width:950px){
+    .content{
+        justify-content:space-between
+    }
+}
+
+@media screen and (max-width:680px){
+    .values{
+        left: 0;
+    }
+}
+
+@media screen and (max-width:680px){
+    .values{
+        top: 20px;
+    }
+    .content > *{
+        margin: auto;
+    }
 }
