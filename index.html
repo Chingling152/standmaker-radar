@@ -8,6 +8,7 @@
     <title>My standmaker</title>
 </head>
 <body>
+    <img id="img" src="Resources/stand_status.png" alt="" height="0" width="0">
     <div class="content">
         <div class="values">
             <p> Power : <input type="range" name="power_slider" id="power" class="skill" value=3 min=0 max=5 oninput="SetValues()"></p>
@@ -18,10 +19,8 @@
             <p> Potential : <input type="range" name="potential_slider" id="potential" class="skill" value=3 min=0 max=5 oninput="SetValues()"></p>
             <button onclick="RandomValues()">Random Button</button>
         </div>
-        <svg id ="svgStand" height = "480" width="320">
-            <image href="Resources/stand_status.png" x="0" y="0"  height = "480" width="320"/>
-        </svg>
-        <script src="svgStand.js"></script>
+        <canvas id ="canvasStand" height="400" width="400"></canvas>
+        <script src="canvasStand.js"></script>
     </div>
 </body>
 </html>

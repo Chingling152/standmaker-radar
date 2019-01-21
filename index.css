@@ -6,13 +6,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-
-.values{
-    position: relative;
+    align-items: center;
     text-align: right;
-    top:150px;
-    left:100px;
+    margin-top:100px;
 }
 
 .values p{
@@ -25,25 +21,4 @@
     font-size: 23px;
     text-align: center;
     width: 100px;
-}
-
-@media screen and (max-width:950px){
-    .content{
-        justify-content:space-between
-    }
-}
-
-@media screen and (max-width:680px){
-    .values{
-        left: 0;
-    }
-}
-
-@media screen and (max-width:680px){
-    .values{
-        top: 20px;
-    }
-    .content > *{
-        margin: auto;
-    }
 }
