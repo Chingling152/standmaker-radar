@@ -6,12 +6,12 @@ function Position(x,y) {
 var Ranks  = ["?","E","D","C","B","A"];
 
 //texts
-var PowerText = new Position(192,75);
-var SpeedText = new Position(300,136);
-var RangeText = new Position(300,280);
-var DurabilityText = new Position(192,343);
-var PrecisionText = new Position(75,280);
-var PotentialText = new Position(75,136);
+var PowerText = new Position(197,75);
+var SpeedText = new Position(308,136);
+var RangeText = new Position(308,280);
+var DurabilityText = new Position(197,343);
+var PrecisionText = new Position(80,280);
+var PotentialText = new Position(80,136);
 
 //skills
 var PowerPos = [
@@ -49,7 +49,7 @@ var DurabilityPos =[
 ];
 
 var PrecisionPos =[
-    new Position(199,200),//NONE
+    new Position(198,202),//NONE
     new Position(182,211),//E
     new Position(168,220),//D
     new Position(150,230),//C
@@ -70,10 +70,6 @@ var PotentialPos =[
 var c = document.getElementById("canvasStand");
 var ctx = c.getContext("2d");
 
-var RankText = new Array(6);
-
-
-
 function SetValues(){
     var Pow = document.getElementById("power").value;
     var Spe = document.getElementById("speed").value;
@@ -90,6 +86,7 @@ function SetValues(){
 
 function DrawStats(Pow,Spe,Ran,Dur,Pre,Pot){
     ctx.fillStyle = "rgb(250,0,0,0.5)";
+
     ctx.beginPath();
     ctx.moveTo(PowerPos[Pow].x,PowerPos[Pow].y);
     ctx.lineTo(SpeedPos[Spe].x,SpeedPos[Spe].y);
@@ -99,11 +96,33 @@ function DrawStats(Pow,Spe,Ran,Dur,Pre,Pot){
     ctx.lineTo(PotentialPos[Pot].x,PotentialPos[Pot].y);
     ctx.closePath();
     ctx.fill();
+
+    ctx.fillStyle = "black";
+    ctx.font = "700 23px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText(Ranks[Pow],PowerText.x,PowerText.y);
+    ctx.fillText(Ranks[Spe],SpeedText.x,SpeedText.y);
+    ctx.fillText(Ranks[Ran],RangeText.x,RangeText.y);
+    ctx.fillText(Ranks[Dur],DurabilityText.x,DurabilityText.y);
+    ctx.fillText(Ranks[Pre],PrecisionText.x,PrecisionText.y);
+    ctx.fillText(Ranks[Pot],PotentialText.x,PotentialText.y);
+
+}
+
+function RandomValues() {
+    var arr = document.getElementsByClassName("skill");
+
+    Array.from(arr).forEach(element => {
+        element.value = parseInt(Math.random()*6);
+    });
+    
+    SetValues();
 }
 
 function DrawBackground(){
     var img = document.getElementById("img");
     ctx.drawImage(img,0,0,c.height,c.width);
 }
+
 
 SetValues();
