@@ -69,6 +69,7 @@ var PotentialPos =[
 // Objects
 var c = document.getElementById("canvasStand");
 var ctx = c.getContext("2d");
+var img = document.getElementById("img");
 
 function SetValues(){
     var Pow = document.getElementById("power").value;
@@ -79,7 +80,7 @@ function SetValues(){
     var Pot = document.getElementById("potential").value;
 
     ctx.clearRect(0, 0, c.width, c.height);
-    DrawBackground();
+    ctx.drawImage(img,0,0,c.height,c.width);
     DrawStats(Pow,Spe,Ran,Dur,Pre,Pot);
 
 }
@@ -118,11 +119,5 @@ function RandomValues() {
     
     SetValues();
 }
-
-function DrawBackground(){
-    var img = document.getElementById("img");
-    ctx.drawImage(img,0,0,c.height,c.width);
-}
-
 
 SetValues();
